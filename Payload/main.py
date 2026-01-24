@@ -1,0 +1,3 @@
+"""
+Taking and editing pictures.
+"""
