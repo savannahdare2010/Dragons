@@ -12,6 +12,15 @@ import threading
 import argparse
 import random
 import bluetooth
+import socket
+
+PACKET_SIZE = 256  # bytes you choose
+
+data = b"A" * 5000  # example payload
+
+for i in range(0, len(data), PACKET_SIZE):
+    chunk = data[i:i + PACKET_SIZE]
+    sock.send(chunk)
 
 sock = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
 sock.connect(("AA:BB:CC:DD:EE:FF", 1))  # target MAC
